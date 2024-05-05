@@ -20,7 +20,11 @@ void insertAthead(Node* &head,int val){
     head=new_node;
 }
 
-
+void deleteAtHead(Node* &head){
+    Node* temp=head;
+    head=head->next;
+    free(temp);
+}
 
 
 void display(Node* head)
@@ -40,10 +44,13 @@ int main()
 {
   Node* head=NULL;
   insertAthead(head,2);
-  display(head);
+  
   insertAthead(head,1);
-  display(head);
+  
   insertAthead(head,4);
+  display(head);
+
+  deleteAtHead(head);
   display(head);
 
 
